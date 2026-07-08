@@ -1,0 +1,31 @@
+package com.ohno.ohnomod;
+
+import net.minecraft.init.Blocks;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.apache.logging.log4j.Logger;
+
+@Mod(modid = ohno.MODID, name = ohno.NAME, version = ohno.VERSION)
+public class ohno 
+{
+    // Теперь MODID совпадает с тем, что мы писали в RegistryHandler!
+    public static final String MODID = "ohnomod"; 
+    public static final String NAME = "OhNo!";
+    public static final String VERSION = "1.0";
+
+    private static Logger logger;
+
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event)
+    {
+        logger = event.getModLog();
+    }
+
+    @EventHandler
+    public void init(FMLInitializationEvent event)
+    {
+        logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+    }
+}
