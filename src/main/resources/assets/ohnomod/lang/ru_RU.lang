@@ -1,43 +1,46 @@
-#PLATES
-item.gold_plate.name=Золотая пластина
-item.lead_plate.name=Свинцовая пластина
-item.iron_plate.name=Железная пластина
-item.uran_plate.name=Урановая пластина
-item.thorium_plate.name=Ториевая пластина
-item.wolfram_plate.name=Вольфрамовая пластина
-item.steel_plate.name=Стальная пластина
-item.titanium_plate.name=Титановая пластина
-item.darksteel_plate.name=Пластина из темной стали
-item.aluminium_plate.name=Алюминиевая пластина
+// PLATES
+item.ohnomod.gold_plate.name=Золотая пластина
+item.ohnomod.lead_plate.name=Свинцовая пластина
+item.ohnomod.iron_plate.name=Железная пластина
+item.ohnomod.uranium_plate.name=Урановая пластина
+item.ohnomod.thorium_plate.name=Ториевая пластина
+item.ohnomod.wolfram_plate.name=Вольфрамовая пластина
+item.ohnomod.steel_plate.name=Стальная пластина
+item.ohnomod.titanium_plate.name=Титановая пластина
+item.ohnomod.darksteel_plate.name=Пластина из темной стали
+item.ohnomod.aluminium_plate.name=Алюминиевая пластина
 
-#DUSTS
-item.lead_dust.name=Свинцовая пыль
-item.iron_dust.name=Железная пыль
-item.gold_dust.name=Золотая пыль
-item.uran_dust.name=Урановая пыль
-item.thorium_dust.name=Ториевая пыль
-item.titanium_dust.name=Титановая пыль
-item.steel_dust.name=Стальная пыль
-item.darksteel_dust.name=Пыль темной стали
-item.wolfram_dust.name=Вольфрамовая пыль
-item.diamond_dust.name=Алмазная пыль
-item.emerald_dust.name=Изумрудная пыль
-item.obsidian_dust.name=Обсидиановая пыль
-item.aluminium_dust.name=Алюминиевая пыль
+// DUSTS
+item.ohnomod.lead_dust.name=Свинцовая пыль
+item.ohnomod.iron_dust.name=Железная пыль
+item.ohnomod.gold_dust.name=Золотая пыль
+item.ohnomod.uran_dust.name=Урановая пыль
+item.ohnomod.thorium_dust.name=Ториевая пыль
+item.ohnomod.titanium_dust.name=Титановая пыль
+item.ohnomod.steel_dust.name=Стальная пыль
+item.ohnomod.darksteel_dust.name=Пыль темной стали
+item.ohnomod.wolfram_dust.name=Вольфрамовая пыль
+item.ohnomod.diamond_dust.name=Алмазная пыль
+item.ohnomod.emerald_dust.name=Изумрудная пыль
+item.ohnomod.obsidian_dust.name=Обсидиановая пыль
+item.ohnomod.aluminium_dust.name=Алюминиевая пыль
 
-#INGOTS
-item.lead_ingot.name=Свинцовый слиток
-item.uranium_ingot.name=Урановый слиток
-item.urethra_ingot.name=Уретриевый слиток
-item.thorium_ingot.name=Ториевый слиток
-item.titanium_ingot.name=Титановый слиток
-item.steel_ingot.name=Стальной слиток
-item.darksteel_ingot.name=Слиток темной стали
-item.wolfram_ingot.name=Вольфрамовый слиток
-item.pure_urethra_ingot.name=Слиток чистого уретрия
-item.urethran_ingot.name=Уретрановый слиток
-item.aluminium_ingot.name=Алюминиевый слиток
+// INGOTS
+item.ohnomod.lead_ingot.name=Свинцовый слиток
+item.ohnomod.uranium_ingot.name=Урановый слиток
+item.ohnomod.urethra_ingot.name=Уретриевый слиток
+item.ohnomod.thorium_ingot.name=Ториевый слиток
+item.ohnomod.titanium_ingot.name=Титановый слиток
+item.ohnomod.steel_ingot.name=Стальной слиток
+item.ohnomod.darksteel_ingot.name=Слиток темной стали
+item.ohnomod.wolfram_ingot.name=Вольфрамовый слиток
+item.ohnomod.pure_urethra_ingot.name=Слиток чистого уретрия
+item.ohnomod.urethran_ingot.name=Уретрановый слиток
+item.ohnomod.aluminium_ingot.name=Алюминиевый слиток
 
-#OTHER
-item.fireclay.name=Шамот
-item.fireclay_brick.name=Шамотный кирпич
+// OTHER
+item.ohnomod.fireclay.name=Шамот
+item.ohnomod.fireclay_brick.name=Шамотный кирпич
+
+// ORES
+item.ohnomod.lead_ore.name=Свинцовая руда

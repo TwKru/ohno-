@@ -6,7 +6,7 @@ import net.minecraft.creativetab.CreativeTabs;
 public class ItemBase extends Item {
 
     public ItemBase(String name) {
-        setUnlocalizedName(name);
+        setUnlocalizedName("ohnomod." + name);
         setRegistryName(name);
         setCreativeTab(CreativeTabs.MISC);
     }

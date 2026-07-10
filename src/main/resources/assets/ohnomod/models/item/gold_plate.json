@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "ohnomod:items/pohui"
+    "layer0": "ohnomod:items/gold_plate"
   }
 }
