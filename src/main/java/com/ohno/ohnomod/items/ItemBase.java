@@ -8,6 +8,6 @@ public class ItemBase extends Item {
     public ItemBase(String name) {
         setUnlocalizedName(name);
         setRegistryName(name);
-        setCreativeTab(CreativeTabs.MISC); // Будет лежать во вкладке "Разное"
+        setCreativeTab(CreativeTabs.MISC);
     }
 }
