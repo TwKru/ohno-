@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "ohnomod:items/wolfram_plate"
+    "layer0": "ohnomod:items/tungsten_ingot"
   }
 }
