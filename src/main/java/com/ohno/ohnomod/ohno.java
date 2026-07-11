@@ -16,6 +16,9 @@ public class ohno
     public static final String NAME = "OhNo!";
     public static final String VERSION = "1.0";
 
+    @Mod.Instance
+    public static ohno instance;
+
     @SidedProxy(clientSide = "com.ohno.ohnomod.proxy.ClientProxy", serverSide = "com.ohno.ohnomod.proxy.CommonProxy")
     public static CommonProxy proxy;
 

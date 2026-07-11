@@ -2,64 +2,137 @@ import os
 import re
 
 # ================= НАСТРОЙКИ СТРУКТУРЫ =================
-# Скрипт сам найдёт нужные папки относительно корня проекта
-JAVA_FILE_PATH = "src/main/java/com/ohno/ohnomod/init/ModItems.java"
-OUTPUT_DIR = "src/main/resources/assets/ohnomod/models/item"
 MOD_ID = "ohnomod"
+
+# Пути к Java-файлам
+ITEMS_JAVA = "src/main/java/com/ohno/ohnomod/init/ModItems.java"
+BLOCKS_JAVA = "src/main/java/com/ohno/ohnomod/init/ModBlocks.java"
+
+# Базовая папка с ресурсами мода
+RES_DIR = f"src/main/resources/assets/{MOD_ID}"
 # =======================================================
 
 
-def generate_item_json(item_name):
-    """Возвращает шаблон JSON-модели предмета с ванильным родителем."""
+def generate_item_json(name):
     return f"""{{
   "parent": "minecraft:item/generated",
   "textures": {{
-    "layer0": "{MOD_ID}:items/{item_name}"
+    "layer0": "{MOD_ID}:items/{name}"
   }}
 }}"""
 
 
-def main():
-    # Проверяем, существует ли файл ModItems.java
-    if not os.path.exists(JAVA_FILE_PATH):
-        print(
-            f"[-] Ошибка: Файл не найден по пути {JAVA_FILE_PATH}.\nПроверь, правильно ли запущен скрипт."
-        )
-        return
+def generate_blockstate_json(name):
+    return f"""{{
+  "variants": {{
+    "normal": {{ "model": "{MOD_ID}:{name}" }}
+  }}
+}}"""
 
-    # Создаём папку назначения, если её ещё нет
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    # Регулярное выражение для поиска строк вида: new ItemBase("имя_предмета")
-    # Ищет только то, что внутри кавычек
+def generate_block_model_json(name):
+    return f"""{{
+  "parent": "minecraft:block/cube_all",
+  "textures": {{
+    "all": "{MOD_ID}:blocks/{name}"
+  }}
+}}"""
+
+
+def generate_block_item_json(name):
+    return f"""{{
+  "parent": "{MOD_ID}:block/{name}"
+}}"""
+
+
+def process_items():
+    if not os.path.exists(ITEMS_JAVA):
+        print(f"[-] Файл предметов не найден: {ITEMS_JAVA} (пропускаем)")
+        return 0
+
+    output_dir = os.path.join(RES_DIR, "models", "item")
+    os.makedirs(output_dir, exist_ok=True)
+
     pattern = re.compile(r'new\s+ItemBase\s*\(\s*"([^"]+)"\s*\)')
-
     count = 0
 
-    print("[+] Чтение ModItems.java и генерация JSON-моделей...")
-
-    with open(JAVA_FILE_PATH, "r", encoding="utf-8") as f:
+    with open(ITEMS_JAVA, "r", encoding="utf-8") as f:
         for line in f:
             match = pattern.search(line)
             if match:
-                item_name = match.group(1)
-                file_name = f"{item_name}.json"
-                full_path = os.path.join(OUTPUT_DIR, file_name)
-
-                # Генерируем контент
-                json_content = generate_item_json(item_name)
-
-                # Записываем файл
-                with open(full_path, "w", encoding="utf-8") as json_file:
-                    json_file.write(json_content)
-
-                print(f" -> Создан: {file_name}")
+                name = match.group(1)
+                with open(
+                    os.path.join(output_dir, f"{name}.json"),
+                    "w",
+                    encoding="utf-8",
+                ) as jf:
+                    jf.write(generate_item_json(name))
                 count += 1
+    return count
 
+
+def process_blocks():
+    if not os.path.exists(BLOCKS_JAVA):
+        print(f"[-] Файл блоков не найден: {BLOCKS_JAVA} (пропускаем)")
+        return 0
+
+    # Папки для 3 видов JSON
+    blockstates_dir = os.path.join(RES_DIR, "blockstates")
+    block_models_dir = os.path.join(RES_DIR, "models", "block")
+    item_models_dir = os.path.join(RES_DIR, "models", "item")
+
+    os.makedirs(blockstates_dir, exist_ok=True)
+    os.makedirs(block_models_dir, exist_ok=True)
+    os.makedirs(item_models_dir, exist_ok=True)
+
+    # Ищет инициализацию блоков вроде new BlockBase("lead_ore", ...)
+    pattern = re.compile(r'new\s+BlockBase\s*\(\s*"([^"]+)"')
+    count = 0
+
+    with open(BLOCKS_JAVA, "r", encoding="utf-8") as f:
+        for line in f:
+            match = pattern.search(line)
+            if match:
+                name = match.group(1)
+
+                # 1. Blockstate
+                with open(
+                    os.path.join(blockstates_dir, f"{name}.json"),
+                    "w",
+                    encoding="utf-8",
+                ) as jf:
+                    jf.write(generate_blockstate_json(name))
+
+                # 2. Block Model
+                with open(
+                    os.path.join(block_models_dir, f"{name}.json"),
+                    "w",
+                    encoding="utf-8",
+                ) as jf:
+                    jf.write(generate_block_model_json(name))
+
+                # 3. Item Model (для инвентаря)
+                with open(
+                    os.path.join(item_models_dir, f"{name}.json"),
+                    "w",
+                    encoding="utf-8",
+                ) as jf:
+                    jf.write(generate_block_item_json(name))
+
+                count += 1
+    return count
+
+
+def main():
+    print("[+] Запуск генерации ресурсов...")
+
+    items_created = process_items()
+    print(f"[+] Создано JSON-моделей предметов: {items_created}")
+
+    blocks_created = process_blocks()
     print(
-        f"\n[+] Готово! Успешно создано моделей: {count} шт."
+        f"[+] Создано JSON`ов для блоков: {blocks_created}"
     )
-    print(f"[+] Все файлы сохранены в: {OUTPUT_DIR}")
 
 
 if __name__ == "__main__":

@@ -23,10 +23,9 @@ public class RegistryHandler {
     // 2. Регистрируем ПРЕДМЕТЫ
     @SubscribeEvent
     public static void onItemRegister(RegistryEvent.Register<Item> event) {
-        // Регистрируем обычные предметы (слитки, пыль)
+        // Регистрируем обычные предметы
         event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
 
-        // Автоматически создаем ItemBlock для каждого нашего блока
         for (Block block : ModBlocks.BLOCKS) {
             event.getRegistry().register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
         }
@@ -46,3 +45,4 @@ public class RegistryHandler {
         }
     }
 }
+

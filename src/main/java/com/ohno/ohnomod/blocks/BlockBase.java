@@ -8,7 +8,7 @@ public class BlockBase extends Block {
 
     public BlockBase(String name, Material material) {
         super(material);
-        setUnlocalizedName(name);
+        setUnlocalizedName("ohnomod." + name);
         setRegistryName(name);
         setCreativeTab(CreativeTabs.BUILDING_BLOCKS); // Будет лежать во вкладке "Строительные блоки"
     }
