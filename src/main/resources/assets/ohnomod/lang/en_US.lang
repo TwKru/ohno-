@@ -14,7 +14,7 @@ item.ohnomod.aluminium_plate.name=Aluminium Plate
 item.ohnomod.lead_dust.name=Lead Dust
 item.ohnomod.iron_dust.name=Iron Dust
 item.ohnomod.gold_dust.name=Gold Dust
-item.ohnomod.uran_dust.name=Uranium Dust
+item.ohnomod.uranium_dust.name=Uranium Dust
 item.ohnomod.thorium_dust.name=Thorium Dust
 item.ohnomod.titanium_dust.name=Titanium Dust
 item.ohnomod.steel_dust.name=Steel Dust
@@ -37,11 +37,13 @@ item.ohnomod.tungsten_ingot.name=Tungsten Ingot
 item.ohnomod.pure_urethra_ingot.name=Pure Urethra Ingot
 item.ohnomod.urethran_ingot.name=Urethran Ingot
 item.ohnomod.aluminium_ingot.name=Aluminium Ingot
+item.ohnomod.berrylium_ingot.name=Berrylium Ingot
 
 // OTHER
 item.ohnomod.fireclay.name=Fireclay
 item.ohnomod.fireclay_brick.name=Fireclay Brick
 tile.ohnomod.workshop.name=Workshop
+itemGroup.OhNoTab=OhNo!
 
 // ORES
 tile.ohnomod.lead_ore.name=Lead Ore

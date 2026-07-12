@@ -14,7 +14,7 @@ item.ohnomod.aluminium_plate.name=Алюминиевая пластина
 item.ohnomod.lead_dust.name=Свинцовая пыль
 item.ohnomod.iron_dust.name=Железная пыль
 item.ohnomod.gold_dust.name=Золотая пыль
-item.ohnomod.uran_dust.name=Урановая пыль
+item.ohnomod.uranium_dust.name=Урановая пыль
 item.ohnomod.thorium_dust.name=Ториевая пыль
 item.ohnomod.titanium_dust.name=Титановая пыль
 item.ohnomod.steel_dust.name=Стальная пыль
@@ -37,6 +37,7 @@ item.ohnomod.tungsten_ingot.name=Вольфрамовый слиток
 item.ohnomod.pure_urethra_ingot.name=Слиток чистого уретрия
 item.ohnomod.urethran_ingot.name=Уретрановый слиток
 item.ohnomod.aluminium_ingot.name=Алюминиевый слиток
+item.ohnomod.berrylium_ingot.name=Бериллиевый слиток
 
 // OTHER
 item.ohnomod.fireclay.name=Шамот

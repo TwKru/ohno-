@@ -25,7 +25,7 @@ public class ModItems {
     public static final Item LEAD_DUST = new ItemBase("lead_dust");
     public static final Item IRON_DUST = new ItemBase("iron_dust");
     public static final Item GOLD_DUST = new ItemBase("gold_dust");
-    public static final Item URAN_DUST = new ItemBase("uran_dust");
+    public static final Item URANIUM_DUST = new ItemBase("uranium_dust");
     public static final Item TITANIUM_DUST = new ItemBase("titanium_dust");
     public static final Item THORIUM_DUST = new ItemBase("thorium_dust");
     public static final Item TUNGSTEN_DUST = new ItemBase("tungsten_dust");
@@ -49,6 +49,7 @@ public class ModItems {
     public static final Item ALUMINIUM_INGOT = new ItemBase("aluminium_ingot");
     public static final Item URETHRAN_INGOT = new ItemBase("urethran_ingot");
     public static final Item PURE_URETHRA_INGOT = new ItemBase("pure_urethra_ingot");
+    public static final Item BERRYLIUM_INGOT = new ItemBase("berrylium_ingot");
 
     //OTHER
     public static final Item FIRECLAY = new ItemBase("fireclay");
@@ -73,7 +74,7 @@ public class ModItems {
         ITEMS.add(LEAD_DUST);
         ITEMS.add(IRON_DUST);
         ITEMS.add(GOLD_DUST);
-        ITEMS.add(URAN_DUST);
+        ITEMS.add(URANIUM_DUST);
         ITEMS.add(THORIUM_DUST);
         ITEMS.add(TITANIUM_DUST);
         ITEMS.add(STEEL_DUST);
@@ -96,6 +97,7 @@ public class ModItems {
         ITEMS.add(PURE_URETHRA_INGOT);
         ITEMS.add(URETHRAN_INGOT);
         ITEMS.add(ALUMINIUM_INGOT);
+        ITEMS.add(BERRYLIUM_INGOT);
 
         //OTHER
         ITEMS.add(FIRECLAY);
